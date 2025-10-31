@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Prevent vertical overflow outside header/footer */
+#__next, #root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Optional: adjust body font size for mobile */
+body {
+  @apply text-base sm:text-base md:text-lg lg:text-xl;
+}
+
+/* Example: make headings slightly smaller on mobile */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+}
+
+/* Adjust padding/margins for mobile */
+section, .container, .px-4, .px-6, .px-8 {
+  @apply px-4 sm:px-6 md:px-8 lg:px-12;
+}
+
+/* Make cards or sections slightly smaller on mobile */
+@layer utilities {
+  .card-responsive {
+    @apply p-4 md:p-6 lg:p-8;
+  }
+  .text-responsive {
+    @apply text-sm md:text-base lg:text-lg;
+  }
+}
+
+/* Ensure main content grows to push footer to bottom */
+main {
+  flex-grow: 1;
+}
+
+/* Optional: smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
