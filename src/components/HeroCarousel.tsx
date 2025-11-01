@@ -41,7 +41,8 @@ export default function HeroCarousel() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            <div className="absolute inset-0 bg-black bg-opacity-40" />
+            {/* Reduced black overlay opacity for lower contrast */}
+            <div className="absolute inset-0 bg-black bg-opacity-20" />
           </div>
           <div className="relative h-full flex items-center justify-center text-center px-4">
             <div className="max-w-3xl">
