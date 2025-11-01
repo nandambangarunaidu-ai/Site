@@ -29,7 +29,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative h-[920px] overflow-hidden">
+    <div className="relative h-[600px] md:h-[920px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -45,13 +45,13 @@ export default function HeroCarousel() {
           </div>
           <div className="relative h-full flex items-center justify-center text-center px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 animate-fade-in">
                 {slide.title}
               </h1>
-              <p className="text-xl md:text-2xl text-white mb-8 animate-fade-in">
+              <p className="text-sm sm:text-lg md:text-xl lg:text-2xl text-white mb-6 md:mb-8 animate-fade-in">
                 {slide.subtitle}
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-sm sm:text-lg font-semibold transition-all transform hover:scale-105">
                 Book Appointment
               </button>
             </div>
@@ -59,13 +59,13 @@ export default function HeroCarousel() {
         </div>
       ))}
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? 'bg-white w-8' : 'bg-white bg-opacity-50'
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
+              index === currentSlide ? 'bg-white sm:w-8' : 'bg-white bg-opacity-50'
             }`}
           />
         ))}
