@@ -65,12 +65,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        <div className="border-t border-gray-800 pt-6 text-center">
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Wellness & Cure Nature Hospital. All rights reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );
