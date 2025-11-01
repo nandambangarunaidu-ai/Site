@@ -4,17 +4,17 @@ const slides = [
   {
     title: 'Welcome to Wellness & Cure Nature Hospital',
     subtitle: 'Your Journey to Natural Healing Begins Here',
-    image: 'https://images.pexels.com/photos/3759089/pexels-photo-3759089.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: '/c1.jpg',
   },
   {
     title: 'Holistic Therapies for Mind & Body',
     subtitle: 'Experience Ancient Healing Traditions',
-    image: 'https://images.pexels.com/photos/3757953/pexels-photo-3757953.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: '/c2.jpg',
   },
   {
     title: 'Expert Care, Natural Solutions',
     subtitle: 'Personalized Treatment Plans for Your Wellbeing',
-    image: 'https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    image: '/c3.jpg',
   },
 ];
 
