@@ -29,7 +29,10 @@ export default function Navigation() {
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-xl">W</span>
                 </div>
-                <span className="text-2xl font-bold text-white">Wellness</span>
+                <div>
+                <h3 className="text-lg font-bold text-white">Wellness & Cure</h3>
+                <p className="text-xs text-gray-400">Nature Hospital</p>
+              </div>
               </div>
             </Link>
 

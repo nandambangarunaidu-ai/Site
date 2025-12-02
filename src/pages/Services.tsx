@@ -31,12 +31,12 @@ export default function Services() {
       {/* Services Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {services.map((service) => {
               const Icon = icons[0];
               return (
-                <div key={service.slug} className="rounded-2xl overflow-hidden bg-white shadow-sm">
-                  <div className="h-44 md:h-56 relative">
+                <div key={service.slug} className="rounded-2xl overflow-hidden bg-white shadow-sm h-full flex flex-col">
+                  <div className="h-44 md:h-56 lg:h-64 relative flex-shrink-0">
                     <img
                       src={service.heroImage || '/sv.jpeg'}
                       alt={service.title}
@@ -48,21 +48,27 @@ export default function Services() {
                     </div>
                   </div>
 
-                  <div className="p-4 md:p-6">
-                    <div className="flex items-start space-x-4">
+                  <div className="p-4 md:p-6 flex-1 flex flex-col">
+                    <div className="flex space-x-4">
                       <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Icon className="w-6 h-6 md:w-7 md:h-7 text-green-600" />
                       </div>
-                      <div className="flex-1">
-                        <p className="leading-relaxed text-gray-600 mb-4 text-sm md:text-base">{service.short}</p>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <Link
-                          to={`/services/${service.slug}`}
-                          className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-all min-h-[44px]"
+                      <div className="flex-1 flex flex-col">
+                        <p
+                          className="leading-relaxed text-gray-600 mb-4 text-sm md:text-base overflow-hidden"
+                          style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}
                         >
-                          Learn More
-                        </Link>
+                          {service.short}
+                        </p>
+
+                        <div className="mt-auto text-right">
+                          <Link
+                            to={`/services/${service.slug}`}
+                            className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-all min-h-[44px]"
+                          >
+                            Learn More
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>

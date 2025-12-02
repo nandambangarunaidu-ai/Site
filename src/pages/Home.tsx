@@ -73,10 +73,10 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch">
             {therapies.map((therapy, index) => (
-              <div key={therapy.slug} className="rounded-xl overflow-hidden bg-white shadow-sm">
-                <div className="h-44 md:h-56 relative">
+              <div key={therapy.slug} className="rounded-xl overflow-hidden bg-white shadow-sm h-full flex flex-col">
+                <div className="h-44 md:h-56 lg:h-64 relative flex-shrink-0">
                   <img
                     src={therapy.heroImage}
                     alt={therapy.title}
@@ -88,14 +88,20 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="p-4 md:p-6">
-                  <div className="flex items-start space-x-4">
+                <div className="p-4 md:p-6 flex-1 flex flex-col">
+                  <div className="flex space-x-4">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-green-600 font-bold text-lg">{index + 1}</span>
                     </div>
-                    <div className="flex-1">
-                      <p className="text-gray-600 mt-1 text-sm md:text-base">{concise[therapy.slug] ?? therapy.short}</p>
-                      <div className="mt-4 text-right">
+                    <div className="flex-1 flex flex-col">
+                      <p
+                        className="text-gray-600 mt-1 text-sm md:text-base mb-4 overflow-hidden"
+                        style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}
+                      >
+                        {concise[therapy.slug] ?? therapy.short}
+                      </p>
+
+                      <div className="mt-auto text-right">
                         <Link
                           to={`/services/${therapy.slug}`}
                           className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[44px] min-w-[44px]"
