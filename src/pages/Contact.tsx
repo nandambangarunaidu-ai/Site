@@ -1,46 +1,43 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useState, FormEvent } from 'react';
+import services from '../data/services';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
+    service: '',
+    preferredDate: '',
+    preferredTime: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
+    // Compose a message for WhatsApp
+    const phone = '9966877227';
+    const parts = [] as string[];
+    parts.push(`Name: ${formData.name}`);
+    // Email was removed from the form per request
+    if (formData.phone) parts.push(`Phone: ${formData.phone}`);
+    if (formData.service) parts.push(`Service: ${formData.service}`);
+    if (formData.preferredDate) parts.push(`Preferred Date: ${formData.preferredDate}`);
+    if (formData.preferredTime) parts.push(`Preferred Time: ${formData.preferredTime}`);
+    if (formData.message) parts.push(`Notes: ${formData.message}`);
+
+    const text = parts.join('\n');
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    }, 3000);
+      setFormData({ name: '', phone: '', service: '', preferredDate: '', preferredTime: '', message: '' });
+    }, 2000);
   };
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: ['123 Wellness Avenue', 'Nature District', 'City, State 12345'],
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
-    },
-    {
-      icon: Mail,
-      title: 'Email Us',
-      details: ['info@wellnessandcure.com', 'appointments@wellnessandcure.com'],
-    },
-    {
-      icon: Clock,
-      title: 'Opening Hours',
-      details: ['Mon - Sat: 8:00 AM - 8:00 PM', 'Sun: 9:00 AM - 5:00 PM'],
-    },
-  ];
+  
 
   return (
     <div className="pt-20">
@@ -55,26 +52,7 @@ export default function Contact() {
 
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {contactInfo.map((info, index) => (
-              <div
-                key={index}
-                className="text-center p-6 bg-gray-50 rounded-xl hover:shadow-md transition-shadow"
-              >
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-green-100 rounded-full mb-4">
-                  <info.icon className="w-7 h-7 text-green-600" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                  {info.title}
-                </h3>
-                {info.details.map((detail, idx) => (
-                  <p key={idx} className="text-gray-600 text-sm">
-                    {detail}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
+          
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -100,19 +78,43 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">Preferred Service</label>
+                  <select
+                    id="service"
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition-all"
-                    placeholder="john@example.com"
-                  />
+                  >
+                    <option value="">-- Select a service --</option>
+                    {services.map((s) => (
+                      <option key={s.slug} value={s.title}>{s.title}</option>
+                    ))}
+                  </select>
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+                    <input
+                      type="date"
+                      id="preferredDate"
+                      value={formData.preferredDate}
+                      onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="preferredTime" className="block text-sm font-medium text-gray-700 mb-2">Preferred Time</label>
+                    <input
+                      type="time"
+                      id="preferredTime"
+                      value={formData.preferredTime}
+                      onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition-all"
+                    />
+                  </div>
+                </div>
+                
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number
@@ -128,11 +130,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message *
+                    Message (optional)
                   </label>
                   <textarea
                     id="message"
-                    required
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}

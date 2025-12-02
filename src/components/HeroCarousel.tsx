@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const slides = [
   {
@@ -29,7 +30,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative h-[920px] overflow-hidden">
+    <div className="relative h-56 md:h-96 lg:h-[600px] overflow-hidden">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -37,35 +38,37 @@ export default function HeroCarousel() {
             index === currentSlide ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-40" />
-          </div>
+          <img
+            src={slide.image}
+            alt={slide.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+
           <div className="relative h-full flex items-center justify-center text-center px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
                 {slide.title}
               </h1>
-              <p className="text-xl md:text-2xl text-white mb-8 animate-fade-in">
+              <p className="text-sm sm:text-base md:text-lg text-white mb-4">
                 {slide.subtitle}
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+              <Link to="/contact" className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all transform hover:scale-105 min-h-[44px]">
                 Book Appointment
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       ))}
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? 'bg-white w-8' : 'bg-white bg-opacity-50'
+            aria-label={`Go to slide ${index + 1}`}
+            className={`rounded-full transition-all ${
+              index === currentSlide ? 'bg-white w-8 h-3' : 'bg-white bg-opacity-50 w-3 h-3'
             }`}
           />
         ))}

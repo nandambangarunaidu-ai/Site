@@ -1,6 +1,7 @@
-import { Droplet, Leaf, Brain, Activity, Circle, Waves } from 'lucide-react';
-import { Service } from '../types';
+import { Droplet } from 'lucide-react';
 import { useEffect } from 'react';
+import services from '../data/services';
+import { Link } from 'react-router-dom';
 
 export default function Services() {
   useEffect(() => {
@@ -10,66 +11,7 @@ export default function Services() {
     window.scrollTo(0, 0);
   }, []);
 
-  const services: Service[] = [
-    {
-      id: '1',
-      name: 'Colon Hydrotherapy',
-      description:
-        'A gentle internal cleansing that helps eliminate toxins and improve digestive health through the use of purified water.',
-      bgImage: '/ch.jpeg',
-    },
-    {
-      id: '2',
-      name: 'Yojan Therapy',
-      description:
-        'Ancient holistic healing technique that balances energy flow throughout the body, promoting overall wellness and vitality.',
-      bgImage: '/yt.jpeg',
-    },
-    {
-      id: '3',
-      name: 'Body Mind Relaxation Therapy',
-      description:
-        'Comprehensive relaxation techniques combining meditation, breathing exercises, and gentle movements to reduce stress and anxiety.',
-      bgImage: '/bmr.jpeg',
-    },
-    {
-      id: '4',
-      name: 'Acupuncture Therapy',
-      description:
-        'Traditional Chinese medicine practice using fine needles to stimulate specific points on the body for pain relief and healing.',
-      bgImage: '/at.jpeg',
-    },
-    {
-      id: '5',
-      name: 'Cupping Therapy',
-      description:
-        'Ancient therapy using suction cups to improve blood flow, reduce inflammation, and promote healing in targeted areas.',
-      bgImage: '/ct.jpeg',
-    },
-    {
-      id: '6',
-      name: 'Kati Snanam',
-      description:
-        'Ayurvedic treatment involving therapeutic bathing techniques to cleanse the body and rejuvenate the skin.',
-      bgImage: '/ks.jpeg',
-    },
-    {
-      id: '7',
-      name: 'Kativasti',
-      description:
-        'Specialized Ayurvedic therapy for lower back pain using warm medicated oil retained over the affected area.',
-      bgImage: '/kv.jpeg',
-    },
-    {
-      id: '8',
-      name: 'Jaanu Vasti',
-      description:
-        'Ayurvedic knee therapy using warm herbal oils to relieve joint pain, stiffness, and improve mobility.',
-      bgImage: '/jv.jpeg',
-    },
-  ];
-
-  const icons = [Droplet, Leaf, Brain, Activity, Circle, Waves, Droplet, Activity];
+  const icons = [Droplet];
 
   return (
     <div>
@@ -90,30 +32,38 @@ export default function Services() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => {
-              const Icon = icons[index];
+            {services.map((service) => {
+              const Icon = icons[0];
               return (
-                <div
-                  key={service.id}
-                  className="relative overflow-hidden hover:shadow-xl transition-all duration-300 group"
-                  style={{
-                    backgroundImage: `url('${service.bgImage}')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  {/* Dark overlay for readability */}
-                  <div className="absolute inset-0 bg-black/40"></div>
-
-                  <div className="relative p-8 flex items-start space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-600 transition-colors">
-                        <Icon className="w-7 h-7 text-green-600 group-hover:text-white transition-colors" />
-                      </div>
+                <div key={service.slug} className="rounded-2xl overflow-hidden bg-white shadow-sm">
+                  <div className="h-44 md:h-56 relative">
+                    <img
+                      src={service.heroImage || '/sv.jpeg'}
+                      alt={service.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30"></div>
+                    <div className="absolute left-6 bottom-6 text-white">
+                      <h3 className="text-lg md:text-2xl font-semibold drop-shadow">{service.title}</h3>
                     </div>
-                    <div className="flex-1 text-white">
-                      <h3 className="text-2xl font-semibold mb-3">{service.name}</h3>
-                      <p className="leading-relaxed">{service.description}</p>
+                  </div>
+
+                  <div className="p-4 md:p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-6 h-6 md:w-7 md:h-7 text-green-600" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="leading-relaxed text-gray-600 mb-4 text-sm md:text-base">{service.short}</p>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <Link
+                          to={`/services/${service.slug}`}
+                          className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-medium transition-all min-h-[44px]"
+                        >
+                          Learn More
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -131,7 +81,7 @@ export default function Services() {
         <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 md:p-12">
+              <div className="p-8 md:p-12">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Not Sure Which Therapy is Right for You?
@@ -139,9 +89,9 @@ export default function Services() {
               <p className="text-lg text-white/90 mb-8">
                 Our experienced therapists are here to help you choose the perfect treatment plan tailored to your specific needs and health goals.
               </p>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105">
+              <Link to="/contact" className="bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105 inline-block">
                 Schedule a Consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>

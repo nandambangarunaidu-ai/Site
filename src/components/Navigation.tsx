@@ -10,6 +10,8 @@ export default function Navigation() {
     { label: 'Home', path: '/' },
     { label: 'Services', path: '/services' },
     { label: 'About Us', path: '/about' },
+    { label: 'Testimonials', path: '/testimonials' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -50,8 +52,9 @@ export default function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-white"
+              className="md:hidden p-2 text-white w-11 h-11 flex items-center justify-center"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -60,22 +63,25 @@ export default function Navigation() {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4">
-            <div className="flex flex-col space-y-4 px-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-lg font-medium transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? 'text-green-300'
-                      : 'text-white hover:text-green-300'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+          <div className="md:hidden fixed inset-0 z-50">
+            <div className="absolute inset-0 bg-black/60" onClick={() => setIsMenuOpen(false)} />
+            <div className="relative bg-gradient-to-b from-green-700 to-emerald-600 text-white p-6 h-full overflow-auto">
+              <div className="flex flex-col space-y-6 mt-6">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`text-xl py-3 px-2 rounded transition-colors duration-200 ${
+                      location.pathname === item.path
+                        ? 'bg-white/10 text-white'
+                        : 'text-white hover:bg-white/10'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}

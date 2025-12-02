@@ -1,6 +1,7 @@
 import { Heart, Users, Award, Clock } from 'lucide-react';
 import HeroCarousel from '../components/HeroCarousel';
 import { Link } from 'react-router-dom';
+import services from '../data/services';
 
 export default function Home() {
   const features = [
@@ -21,37 +22,23 @@ export default function Home() {
     },
     {
       icon: Clock,
-      title: 'Flexible Hours',
-      description: 'Open 7 days a week for your convenience',
+      title: 'Trusted Care',
+      description: 'Certified practitioners, accreditations, and evidence-informed protocols',
     },
   ];
 
-  const therapies = [
-    {
-      name: 'Colon Hydrotherapy',
-      bgImage: '/ch.jpeg',
-    },
-    {
-      name: 'Yojan Therapy',
-      bgImage: '/yt.jpeg',
-    },
-    {
-      name: 'Body Mind Relaxation',
-      bgImage: '/bmr.jpeg',
-    },
-    {
-      name: 'Acupuncture Therapy',
-      bgImage: '/at.jpeg',
-    },
-    {
-      name: 'Cupping Therapy',
-      bgImage: '/ct.jpeg',
-    },
-    {
-      name: 'Kati Snanam',
-      bgImage: '/ks.jpeg',
-    },
-  ];
+  // Show the first six services on the home page
+  const therapies = services.slice(0, 6);
+
+  // Concise two-line descriptions for Home cards (keeps card height consistent)
+  const concise = {
+    'abhyanga': 'Warm Ayurvedic oil massage that deeply relaxes muscles and boosts circulation.',
+    'colon-hydro-therapy': 'Gentle colonic irrigation to cleanse the large intestine and support digestion.',
+    'shirodhara': 'A steady stream of warm oil on the forehead to calm the nervous system and improve sleep.',
+    'steambath': 'Moist-heat therapy to open pores, relax muscles, and ease respiratory congestion.',
+    'ozone-therapy': 'Controlled medical ozone applications aimed at supporting circulation and immune function.',
+    'kati-vasthi': 'Localized warm-oil treatment for targeted lower-back relief and tissue nourishment.',
+  } as Record<string, string>;
 
   return (
     <div>
@@ -88,24 +75,36 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {therapies.map((therapy, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden hover:shadow-xl transition-shadow group"
-                style={{
-                  backgroundImage: `url('${therapy.bgImage}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all"></div>
-
-                <div className="relative p-6 text-white">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
-                    <span className="text-green-600 group-hover:text-white font-bold text-xl">
-                      {index + 1}
-                    </span>
+              <div key={therapy.slug} className="rounded-xl overflow-hidden bg-white shadow-sm">
+                <div className="h-44 md:h-56 relative">
+                  <img
+                    src={therapy.heroImage}
+                    alt={therapy.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30"></div>
+                  <div className="absolute left-4 bottom-4 bg-white/90 text-gray-900 rounded-full px-3 py-1 font-medium text-sm">
+                    {therapy.title}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{therapy.name}</h3>
+                </div>
+
+                <div className="p-4 md:p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-green-600 font-bold text-lg">{index + 1}</span>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-gray-600 mt-1 text-sm md:text-base">{concise[therapy.slug] ?? therapy.short}</p>
+                      <div className="mt-4 text-right">
+                        <Link
+                          to={`/services/${therapy.slug}`}
+                          className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all min-h-[44px] min-w-[44px]"
+                        >
+                          Learn More
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -135,9 +134,9 @@ export default function Home() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Book your appointment today and take the first step towards natural wellness
           </p>
-          <button className="bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 animate-pulse">
+          <Link to="/contact" className="bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 animate-pulse inline-block">
             Book an Appointment
-          </button>
+          </Link>
         </div>
       </section>
     </div>

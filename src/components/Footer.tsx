@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -29,10 +30,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors text-sm">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors text-sm">Services</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors text-sm">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors text-sm">Contact</a></li>
+              <li><Link to="/" className="text-gray-400 hover:text-green-500 transition-colors text-sm">Home</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-green-500 transition-colors text-sm">Services</Link></li>
+              <li><Link to="/about" className="text-gray-400 hover:text-green-500 transition-colors text-sm">About Us</Link></li>
+              <li><Link to="/testimonials" className="text-gray-400 hover:text-green-500 transition-colors text-sm">Testimonials</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-green-500 transition-colors text-sm">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -53,14 +55,14 @@ export default function Footer() {
               </li>
             </ul>
             <div className="flex space-x-3 mt-4">
-              <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors">
-                <Facebook className="w-4 h-4" />
+              <a href="https://youtube.com/@rwnch?si=E2QRIBN89HRIVkXP" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-8 md:h-8 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors">
+                <Youtube className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors">
+              <a href="https://www.instagram.com/rammohanwnch?igsh=MXUxZnd6cnhwdXlxZA==" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-8 md:h-8 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors">
-                <Twitter className="w-4 h-4" />
+              <a href="https://www.facebook.com/share/19zkUQJPwA/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 md:w-8 md:h-8 bg-gray-800 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors">
+                <Facebook className="w-4 h-4" />
               </a>
             </div>
           </div>
