@@ -14,13 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold">Wellness & Cure</h3>
-                <p className="text-xs text-gray-400">Nature Hospital</p>
-              </div>
+              <img src="/wf.png" alt="Wellness & Cure" className="w-15 h-15 object-contain" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted partner in natural healing and holistic wellness. Experience the power of nature's remedies.
@@ -43,15 +37,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm">
                 <MapPin className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
-                <span className="text-gray-400">123 Wellness Avenue, Nature District</span>
+                <span className="text-gray-400">Near Bus stand, Opposite street to Bhashyam, Subbarao pet, Tadepalligudem-534101, Andrapradesh</span>
               </li>
               <li className="flex items-center space-x-2 text-sm">
                 <Phone className="w-4 h-4 text-green-500 flex-shrink-0" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-center space-x-2 text-sm">
-                <Mail className="w-4 h-4 text-green-500 flex-shrink-0" />
-                <span className="text-gray-400">info@wellnessandcure.com</span>
+                <span className="text-gray-400">+91 9966877227 +91 9912177227</span>
               </li>
             </ul>
             <div className="flex space-x-3 mt-4">

@@ -1,13 +1,95 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wellness and Cure Hospital Website</title>
+
+    <title>Wellness & Nature Cure Hospital | Yoga, Ayurveda & Holistic Healing</title>
+    <meta
+      name="description"
+      content="Wellness & Nature Cure Hospital offering holistic healing through Yoga, Ayurveda, Naturopathy, Panchakarma, detox therapies, and natural diet guidance. Begin your journey to complete health."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/logo-w.svg" />
+
+    <!-- SEO Keywords -->
+    <meta
+      name="keywords"
+      content="Nature Cure Hospital, Ayurveda, Yoga Therapy, Panchakarma, Naturopathy, Wellness Center, Holistic Healing, Detox Therapy, Natural Foods, Organic Diet, Health Retreat"
+    />
+
+    <!-- Author -->
+    <meta name="author" content="Wellness & Nature Cure Hospital" />
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="Wellness & Nature Cure Hospital" />
+    <meta
+      property="og:description"
+      content="Experience Yoga, Ayurveda, Naturopathy, Panchakarma and natural healing therapies at our holistic wellness hospital."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta
+      property="og:image"
+      content="https://yourwebsite.com/og-image.jpg"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Wellness & Nature Cure Hospital" />
+    <meta
+      name="twitter:description"
+      content="Holistic health services including Yoga, Ayurveda, and Naturopathy designed for complete healing."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yourwebsite.com/og-image.jpg"
+    />
+
+    <!-- Schema Markup: Local Business (Highly Improves SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Hospital",
+        "name": "Wellness & Nature Cure Hospital",
+        "url": "https://yourwebsite.com",
+        "logo": "https://yourwebsite.com/logo-w.svg",
+        "description": "Holistic wellness center providing yoga therapy, naturopathy, panchakarma, detox and natural healing treatments.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Your Address Here",
+          "addressLocality": "Your City",
+          "addressRegion": "Your State",
+          "postalCode": "000000",
+          "addressCountry": "IN"
+        },
+        "image": "https://yourwebsite.com/og-image.jpg",
+        "telephone": "+91 00000 00000",
+        "sameAs": [
+          "https://www.facebook.com/share/19zkUQJPwA/",
+          "https://www.instagram.com/rammohanwnch?igsh=MXUxZnd6cnhwdXlxZA=="
+        ]
+      }
+    </script>
+
+    <!-- Preloading (Performance Boost) -->
+    <link rel="preload" href="/src/main.tsx" as="script" />
+
+    <!-- Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <!-- Accessibility -->
+    <meta name="theme-color" content="#1f8c4c" />
   </head>
+
   <body>
+    <noscript>You need JavaScript enabled to run this application.</noscript>
+
     <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

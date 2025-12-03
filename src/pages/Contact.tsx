@@ -159,9 +159,9 @@ export default function Contact() {
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Find Us Here
               </h2>
-              <div className="bg-gray-200 rounded-xl overflow-hidden h-48 md:h-64 lg:h-[500px] mb-6">
+              <div className="bg-gray-200 rounded-xl overflow-hidden h-48 md:h-64 lg:h-[500px] mb-3">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648750455!2d-73.98784368459395!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1635959542742!5m2!1sen!2sus"
+                  src="https://www.google.com/maps?q=16.8172222,81.5262887&z=17&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -169,6 +169,16 @@ export default function Contact() {
                   loading="lazy"
                   title="Hospital Location"
                 ></iframe>
+                <div className="text-sm mt-2 text-center">
+                  <a
+                    href="https://www.google.com/maps/place/Rammohan+Wellness+%26+Naturecure+Hospital/@16.8172222,81.5262887,17z/data=!3m1!4b1!4m6!3m5!1s0x3a37b53f67b84747:0xebe4d75a179037a3!8m2!3d16.8172222!4d81.5262887!16s%2Fg%2F11wqz1mlxm?entry=ttu&g_ep=EgoyMDI1MTEzMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:underline"
+                  >
+                    Open in Google Maps
+                  </a>
+                </div>
               </div>
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">
