@@ -28,8 +28,8 @@ export default function Navigation() {
               <div className="flex items-center space-x-3">
                 <img src="/logo-w.svg" alt="Wellness & Cure" className="h-10 md:h-12 w-auto" />
                 <div className="hidden sm:block">
-                  <h3 className="text-lg font-bold text-white">Wellness & Cure</h3>
-                  <p className="text-xs text-gray-400">Nature Hospital</p>
+                  <h3 className="text-lg font-bold text-white">RamMohan</h3>
+                  <p className="text-xs text-gray-400">Wellness & Nature Cure Hospital</p>
                 </div>
               </div>
             </Link>
