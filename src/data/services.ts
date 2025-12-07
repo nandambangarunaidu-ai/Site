@@ -14,12 +14,12 @@ Typical session benefits include enhanced relaxation, improved sleep quality, so
     slug: 'colon-hydro-therapy',
     title: 'Colon hydro therapy',
     heroImage: '/colon.jpg',
-    short: 'Gentle colonic irrigation to cleanse the large intestine and support digestive health.',
-    content: `Colon hydrotherapy (colonic irrigation) is a procedure that gently flushes the large intestine with warm, filtered water to remove impacted waste and promote bowel regularity.
+    short: 'Colon hydrotherapy is a gentle cleansing procedure that uses warm UV-filtered water to flush the large intestine, helping to remove accumulated waste and promote better bowel health.',
+    content: `Colon hydrotherapy, also known as colonic irrigation, is a gentle and controlled cleansing procedure designed to support bowel health. During the treatment, warm, UV-filtered, purified water is slowly introduced into the large intestine through a small, sterile catheter. The water helps to soften, loosen, and flush out accumulated waste, including impacted stool, gas, mucus, and toxins that may have built up along the intestinal walls over time.
 
-Sessions are typically performed by a trained practitioner using disposable equipment in a private, hygienic setting. The therapy aims to reduce bloating, support detoxification, and create a healthier environment for nutrient absorption by clearing accumulated residues.
+The process works in repeated cycles of water infusion and release, allowing the colon to contract and expel waste naturally. This encourages the bowel to function more efficiently while reducing discomfort. Modern equipment includes pressure and temperature controls to ensure safety, hygiene, and comfort throughout the session.
 
-While some people report improved digestion and increased energy after treatment, clinicians recommend colon hydrotherapy as a complementary approach rather than a primary treatment for gastrointestinal conditions. A practitioner will assess suitability and recommend frequency depending on individual needs.`
+Colon hydrotherapy is often used to support detoxification, improve digestive function, relieve constipation, reduce bloating, and promote a sense of lightness and well-being. Many people also report improved energy levels and better nutrient absorption after treatment, as the colon becomes clearer and healthier.`
   },
   {
     slug: 'shirodhara',
@@ -36,12 +36,12 @@ Shirodhara is often combined with other Ayurvedic treatments such as abhyanga (o
     slug: 'steambath',
     title: 'Steambath',
     heroImage: '/sb.jpg',
-    short: 'Warm steam therapy to open pores, relax muscles, and support respiratory health.',
-    content: `A steambath, or steam bath, exposes the body to humid, warm air and helps open pores, relax muscles, and loosen mucus in the airways.
+    short: 'A steam bath uses moist heat to open pores, relax muscles, ease congestion, and promote detoxification through sweating, offering rejuvenation and personalized therapeutic benefits.',
+    content: `Steam-bath exposes the body to moist steam and helps open pores, relax muscles, and loosen mucus in the airways.
 
-The moist heat promotes sweating which can support skin cleansing and temporary relief of muscular tension. Steam sessions are commonly used before bodywork to prepare tissues and after some respiratory conditions to help ease congestion.
+The moist heat promotes sweating which can support skin cleansing and relief of muscular tension or muscle soreness. Steam sessions are commonly used post-massage sessions to detoxify the body through sweat. Also, in respiratory conditions it helps ease congestion and promotes better breathing by clearing the air passages.
 
-Clients should stay hydrated and avoid excessive exposure; steam therapy is contraindicated for certain cardiovascular or acute health conditions, so an intake assessment is recommended.`
+Steam bath is an excellent detoxifier and rejuvenating therapy for all ages. Personalised steam baths for your problems will also be prescribed after a detailed consultation for better relief.`
   },
   {
     slug: 'ozone-therapy',

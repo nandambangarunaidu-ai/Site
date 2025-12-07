@@ -27,9 +27,9 @@ export default function Navigation() {
             <Link to="/" className="flex items-center cursor-pointer">
               <div className="flex items-center space-x-3">
                 <img src="/logo-w.svg" alt="Wellness & Cure" className="h-12 md:h-12 w-auto" />
-                <div className="hidden sm:block">
+                <div className="block">
                   <h3 className="text-lg font-bold text-white">RamMohan</h3>
-                  <p className="text-xs text-gray-900">Wellness & Nature Cure Hospital</p>
+                  <p className="text-xs text-white/90">Wellness & Nature Cure Hospital</p>
                 </div>
               </div>
             </Link>
