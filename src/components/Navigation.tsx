@@ -17,19 +17,19 @@ export default function Navigation() {
   return (
     <nav
       className="fixed w-full top-0 z-50 bg-cover bg-center shadow-md"
-      style={{ backgroundImage: "url('/1w.jpg')" }}
+      style={{ backgroundColor: '#C74375' }}
     >
       {/* Optional overlay for better contrast */}
-      <div className="bg-black/50">
+      <div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center cursor-pointer">
               <div className="flex items-center space-x-3">
-                <img src="/logo-w.svg" alt="Wellness & Cure" className="h-10 md:h-12 w-auto" />
+                <img src="/logo-w.svg" alt="Wellness & Cure" className="h-12 md:h-12 w-auto" />
                 <div className="hidden sm:block">
                   <h3 className="text-lg font-bold text-white">RamMohan</h3>
-                  <p className="text-xs text-gray-400">Wellness & Nature Cure Hospital</p>
+                  <p className="text-xs text-gray-900">Wellness & Nature Cure Hospital</p>
                 </div>
               </div>
             </Link>
@@ -67,12 +67,24 @@ export default function Navigation() {
           <div className="md:hidden fixed inset-0 z-50">
             <div className="absolute inset-0 bg-black/60" onClick={() => setIsMenuOpen(false)} />
             <div className="relative bg-gradient-to-b from-green-700 to-emerald-600 text-white p-6 h-full overflow-auto">
-              <div className="flex flex-col space-y-6 mt-6">
+              {/* Close button top-right inside overlay for easy access */}
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close menu"
+                className="absolute top-4 right-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center"
+              >
+                <X className="w-6 h-6 text-white" />
+              </button>
+
+              <div className="flex flex-col space-y-6 mt-12">
                 {navItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      if (typeof window !== 'undefined') window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                    }}
                     className={`text-xl py-3 px-2 rounded transition-colors duration-200 ${
                       location.pathname === item.path
                         ? 'bg-white/10 text-white'

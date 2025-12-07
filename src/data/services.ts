@@ -13,7 +13,7 @@ Typical session benefits include enhanced relaxation, improved sleep quality, so
   {
     slug: 'colon-hydro-therapy',
     title: 'Colon hydro therapy',
-    heroImage: '/ch.jpeg',
+    heroImage: '/colon.jpg',
     short: 'Gentle colonic irrigation to cleanse the large intestine and support digestive health.',
     content: `Colon hydrotherapy (colonic irrigation) is a procedure that gently flushes the large intestine with warm, filtered water to remove impacted waste and promote bowel regularity.
 
@@ -46,7 +46,7 @@ Clients should stay hydrated and avoid excessive exposure; steam therapy is cont
   {
     slug: 'ozone-therapy',
     title: 'Ozone therapy',
-    heroImage: '/ww.jpg',
+    heroImage: '/ozone.jpg',
     short: 'Medical ozone applications intended to support circulation and immune response.',
     content: `Ozone therapy uses ozone gas (a mixture of oxygen and ozone) in controlled medical applications. Practitioners apply ozone via methods such as ozonated oils, minor autohemotherapy, or localized insufflation depending on goals.
 

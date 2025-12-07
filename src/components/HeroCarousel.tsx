@@ -5,7 +5,7 @@ const slides = [
   {
     title: 'Welcome to Wellness & Cure Nature Hospital',
     subtitle: 'Your Journey to Natural Healing Begins Here',
-    image: '/c1.jpg',
+    image: '/c1.png',
   },
   {
     title: 'Holistic Therapies for Mind & Body',
