@@ -93,7 +93,7 @@ export default function Services() {
                 Not Sure Which Therapy is Right for You?
               </h2>
               <p className="text-lg text-white/90 mb-8">
-                Our experienced therapists are here to help you choose the perfect treatment plan tailored to your specific needs and health goals.
+                Our expert doctors and experienced wellness consultants are here to help you choose the perfect treatment plan tailored to your specific needs and health goals.
               </p>
               <Link to="/contact" className="bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105 inline-block">
                 Schedule a Consultation

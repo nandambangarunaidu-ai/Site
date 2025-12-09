@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const slides = [
   {
-    title: 'Welcome to Wellness & Cure Nature Hospital',
+    title: 'Welcome to Wellness & Nature Cure Hospital',
     subtitle: 'Your Journey to Natural Healing Begins Here',
     image: '/c1.png',
   },

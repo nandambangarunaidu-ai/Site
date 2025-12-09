@@ -52,7 +52,7 @@ Steam bath is an excellent detoxifier and rejuvenating therapy for all ages. Per
 
 Proponents report benefits for circulation, immune modulation, and wound healing; however, scientific opinions vary and some approaches are considered experimental. Safety and regulatory status differ by country and clinic, so treatments should be provided by trained medical professionals with informed consent.
 
-A qualified practitioner will review medical history and explain potential risks, expected outcomes, and alternatives before treatment.`
+Here in our Rammohan wellness & nature cure hospital we provide carefully curate treatments thorugh qualified practitioner by reviewing medical history and explain potential risks, expected outcomes, and alternatives before treatment.`
   },
   {
     slug: 'kati-vasthi',
