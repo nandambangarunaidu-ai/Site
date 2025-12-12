@@ -1,37 +1,10 @@
-import { Target, Eye, Heart, CheckCircle } from 'lucide-react';
-
 export default function About() {
-  const values = [
-    {
-      icon: Heart,
-      title: 'Compassionate Care',
-      description: 'We treat every patient with empathy, respect, and genuine concern for their wellbeing.',
-    },
-    {
-      icon: CheckCircle,
-      title: 'Excellence',
-      description: 'Committed to the highest standards of natural healthcare and therapeutic practices.',
-    },
-    {
-      icon: Target,
-      title: 'Holistic Approach',
-      description: 'Addressing the root causes of health issues through integrated natural therapies.',
-    },
-  ];
-
-  const stats = [
-    { number: '10+', label: 'Years of Experience' },
-    { number: '5000+', label: 'Happy Patients' },
-    { number: '8', label: 'Specialized Therapies' },
-    { number: '15+', label: 'Expert Therapists' },
-  ];
-
   return (
     <div>
       <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-xl max-w-3xl mx-auto">Ram Mohanu Illness and Nature Cure Hospital — our journey in natural wellness</p>
+          <p className="text-xl max-w-3xl mx-auto">Rammohan Wellness & Nature Cure Hospital</p>
         </div>
       </div>
 
@@ -39,20 +12,47 @@ export default function About() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose lg:prose-lg text-gray-700">
             <p>
-              Ram Mohanu Illness and Nature Cure Hospital was established in 2024 by Siri Nandu Varama Rao, whose journey in health and wellness began many years earlier. Before founding the hospital, Rao started a dedicated Yoga Center in Sadepalu Gudunlo, where his commitment to teaching and promoting yoga took shape. By 2009, he was fully engaged in yoga education, and in 2010 he formally began conducting yoga programs in schools, introducing structured yoga instruction to young students. His association with the Patanjali Yoga Center in 2011 further strengthened his foundation in traditional yoga practices.
+              Rammohan Wellness & Nature Cure Hospital was established in 2024 by Sri. Nandam Rammohan Rao garu, whose journey in health and wellness began about 2 decades ago. Before founding the hospital, Rammohan started first yoga training centre in his town, Tadepalligudem, where his commitment is to teaching and promoting yoga. By 2009 he was totally engaged in yoga education and by 2010 he  began conducting yoga programs in schools, introducing structured yoga trainings to young students. His association with Patanjali yog peeth in 2011 further strengthened his foundation in traditional yoga practices. Later his expertise spread to therapeutic yoga and he became the first choice for yoga & wellness to celebrities in his town and beyond.
             </p>
 
             <p>
-              Throughout his journey, Rao emphasized that true health is deeply rooted in one’s diet. He strongly advocated for natural, wholesome foods—especially millets, dry fruits, organic produce, and cold-pressed oils—believing that these elements form the cornerstone of long-term wellness. His philosophy centers on the idea that mindful food choices are essential for achieving and maintaining good health.
+              Throughout his jouney, Mr. Rammohan emphasized that true health is deeply rooted in ones diet where in he advocated natural, wholesome foods especially millets, dry fruits,cold pressed oils.
             </p>
 
             <p>
-              The hospital’s scope expanded significantly in 2016 with the addition of Viru Teru, a young nature cure doctor, marking the inclusion of broader naturopathy practices. By 2017, the team advanced their expertise by mastering Panchakarma therapy in Kerala, one of Ayurveda’s most respected detoxification systems. Despite challenges in January 2021, including temporary closures by authorities, the team persevered and completed additional courses and certifications, reinforcing their commitment to high professional standards in alternative medicine.
+              In 2012, he went on to establish coastal Andhra's first Organic food store, named Aarogya Nilayam in Tadepalligudem, that contained wide range of millets, dry fruits, organic varieties of rices, oils and many more healthy food.
             </p>
 
             <p>
-              Driven by a deep desire to serve society, Rao and his team have continuously worked to promote holistic health. The hospital aims to integrate yoga, Ayurveda, and naturopathy into everyday healthcare, making these traditional practices accessible and acceptable to the wider community. Through outreach, education, and unwavering dedication, they strive to inspire healthier living and empower individuals to embrace natural wellness.
+              For his passion to do something for the society, he joined his daughter to pursue BNYS in India's no. 1  college, SDMCNYS in 2016, and in 2017 his interest in ayurveda led him to his training in Kerala, where he went on to learn panchakarma & other ayurveda therapies, later in 2017 December he established Ayush ayurveda clinic in Tadepalligudem, within no time the clinic got a great recognition in pain management and cure especially for back pain and related problems like disc bulge, sciatica and neck pain etc..
             </p>
+
+            <p>
+              In 2021 clinic's services were paused due to Covid.
+            </p>
+
+            <p>
+              In 2022 Dr. Bhavya Sree, his daughter graduated in Bachelor of Naturopathy & Yogic Sciences, in latter years she has done multiple courses on advanced acupuncture, Ozone therapy, Garbhasanskar, maternal nutrition to get expertise on them.
+            </p>
+
+            <p>
+              In 2024 Nov,8th Mr. Rammohan along with his children resumed the clinic with a rebranded name "Rammohan Wellness & Naturecure Hospital".
+            </p>
+
+            <p>
+              This is a family led Hospital  managed by Rammohan's children. His daughter Dr. Bhavya Sree.Nandam is the Cheif Medical Officer and his son Nandam.Bangaru Naidu takes care of the Administration and Execution. Rammohan continues to be the backend support for the hospital.
+            </p>
+
+            <p>
+              This establishment does not aim in minting money, rather this is rebuilt to do something good to the society with passion.
+            </p>
+
+            <div className="mt-6 bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 className="text-xl font-semibold mb-2">Our Vision</h3>
+              <p className="mb-0">
+                Our aim is to make quality health care and wellness affordable for people through natural systems of medicine. We want to make an impact on bringing health to the lives of people who want to maintain their body and mind young, energetic and healthy.
+              </p>
+            </div>
           </div>
         </div>
       </section>

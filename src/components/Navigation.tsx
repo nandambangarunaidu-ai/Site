@@ -26,10 +26,10 @@ export default function Navigation() {
             {/* Logo */}
             <Link to="/" className="flex items-center cursor-pointer">
               <div className="flex items-center space-x-3">
-                <img src="/logo-w.svg" alt="Wellness & Cure" className="h-12 md:h-12 w-auto" />
+                <img src="/logo-w.svg" alt="Wellness & Cure" className="h-20 md:h-20 w-auto" />
                 <div className="block">
-                  <h3 className="text-lg font-bold text-white">RamMohan</h3>
-                  <p className="text-xs text-white/90">Wellness & Nature Cure Hospital</p>
+                  <h3 className="text-lg font-bold text-white -ml-8">RamMohan Wellness &</h3>
+                  <p className="text-lg font-bold text-white -mt-2 -ml-8">Nature Cure Hospital</p>
                 </div>
               </div>
             </Link>

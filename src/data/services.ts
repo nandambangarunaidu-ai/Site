@@ -123,7 +123,7 @@ Clients are advised to view foot detox treatments as complementary care that may
   {
     slug: 'blood-circulating-machine',
     title: 'Blood circulating machine',
-    heroImage: '/bcm.jpeg',
+    heroImage: '/bcm.jpg',
     short: 'Mechanical devices designed to improve peripheral circulation and reduce edema.',
     content: `Blood circulation machines is a general term referring to devices (such as pneumatic compression systems or passive circulation devices) used to improve peripheral blood flow and reduce swelling.
 
