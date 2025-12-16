@@ -11,19 +11,19 @@ export default function Home() {
       description: 'Experience the power of nature‑based therapies',
     },
     {
-      icon: Users,
-      title: 'Expert Therapists',
-      description: 'Certified professionals with years of experience',
+      icon: Award,
+      title: 'Zero Side Effects',
+      description: 'All treatments prescribed here are 100% natural.',
     },
     {
-      icon: Award,
-      title: 'Proven Results',
-      description: 'Thousands of satisfied patients across the globe',
+      icon: Users,
+      title: 'Results driven treatments',
+      description: 'Thousands of satisfied patients, tailored integrated treatment protocols for guaranteed results',
     },
     {
       icon: Clock,
       title: 'Trusted Care',
-      description: 'Certified practitioners, accreditations, and evidence-informed protocols',
+      description: 'Certified practitioners, and evidence-informed protocols',
     },
   ];
 

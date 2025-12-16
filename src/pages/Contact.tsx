@@ -1,11 +1,16 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import services from '../data/services';
 
 export default function Contact() {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const initialService = params.get('service') || '';
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: '',
+    service: initialService,
     preferredDate: '',
     preferredTime: '',
     message: '',

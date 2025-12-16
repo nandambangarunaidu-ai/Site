@@ -34,7 +34,7 @@ export default function ServiceDetail() {
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative max-w-6xl mx-auto px-6">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-md">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-md">
             {service.title}
           </h1>
           <p className="mt-2 text-sm sm:text-base md:text-lg text-white/90 max-w-2xl">{service.short}</p>
@@ -46,11 +46,38 @@ export default function ServiceDetail() {
           <Link to="/services" className="text-green-600 font-medium">← Back to Services</Link>
         </div>
 
-        <article className="prose lg:prose-xl max-w-none text-lg">
-          {service.content.split('\n\n').map((para, idx) => (
-            <p key={idx}>{para}</p>
-          ))}
+        <article className="max-w-none text-lg prose lg:prose-xl">
+          {service.content.split('\n\n').map((para, idx) => {
+            const t = para.trim();
+
+            // Detect common subheadings from the document
+            const headingPattern = /^(What is|Why Choose|Benefits of|The Procedure|Why Choose Us|Book Your|What is |Why Choose |Benefits |The Procedure|-|[A-Za-z]+\svasthi|Cupping Therapy|Foot detox|Hip bath|Accupuncture therapy|Ozone therapy|Steam bath|Shirodhara)/i;
+
+            if (!t) return <p key={idx} />;
+
+            if (headingPattern.test(t) || t.endsWith('?') || (t.length < 60 && /^[A-Za-z0-9 \-\&'()]+$/.test(t))) {
+              return (
+                <h2 key={idx} className="text-xl md:text-2xl font-semibold text-gray-800 mt-6 mb-3">
+                  {t}
+                </h2>
+              );
+            }
+
+            return (
+              <p key={idx} className="mb-4 text-gray-700 leading-relaxed">
+                {t}
+              </p>
+            );
+          })}
         </article>
+        <div className="mt-8 text-center">
+          <Link
+            to={`/contact?service=${encodeURIComponent(service.title)}`}
+            className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition-all"
+          >
+            Book Service Now
+          </Link>
+        </div>
       </main>
     </div>
   );
